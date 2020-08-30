@@ -1,0 +1,6 @@
+*.code-workspace
+/venv
+/stubs
+.flaskenv
+.vscode
+**/__pycache__
