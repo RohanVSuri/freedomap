@@ -2,3 +2,16 @@
     --primary-color: linear
 }
 
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
