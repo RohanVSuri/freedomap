@@ -76,6 +76,7 @@
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: bounce 3.5s infinite 2s;
     height: 75px;
     width: 75px;
     cursor: pointer;
@@ -126,7 +127,7 @@
     padding: 5px;
     text-align: center;
     color: var(--text-color);
-    background-color:var(--accent-color);
+    background-color: var(--accent-color);
     font-size: 15px;
 }
 
@@ -160,4 +161,16 @@
     background-color:#08d9d6;
     width: 1px;
     padding: 5px;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    15.5666% {
+        transform: translate(-50%, -25%);
+    }
+    33% {
+        transform: translate(-50%, -50%);
+    }
 }
