@@ -6,6 +6,8 @@
 <meta charset="utf-8">
 <meta name="description" content="Home page for freedomap - links and information">
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<script src="{{ url_for('static', filename='/js/index.js') }}" defer></script>
 {% endblock %}
 
 
@@ -18,18 +20,43 @@
         <img class="scroll-indicator" src="/static/img/double-down-arrow.png">
     </div>
     <div class="container">
-       <a href="/map" class="btn">please use your mouse or trackpad to navigate to this button and using the left click please click on this button and it will take you to our map! thanks :)))</a>
+       <a href="/map" class="btn">View the map</a>
     </div>
 
     <div class="ptext">
-        At freedomap we believe that the importance of your right to protest should be protected and encouraged. That is
-        why we have created freedomap,
-        an accessible web application that allows users to document and view protest opportunities in their area.
-        freedomap enables users to join protests and exercise their right to protest, anywhere, any time.
+        <div class="mission">
+            <div class="headtext">Our Mission</div>
+        <br>
+        At freedomap we believe that your right to protest should be protected and encouraged which is why we
+        why we have created freedomap. freedomap is an accessible web application that allows users to document 
+        and view protest opportunities in their area and around the world. With freedomap, you can join protests 
+        and exercise your right to protest, anywhere, any time.
+        </div>
+        <div class="headtext">The Team</div>
+        <div class="grid2x2">
+            <div class="box box1"><div>Andrew Lester
+                <br>
+              A senior at George Mason High School, Andrew is interested in Computer Science, Robotics and smuggling narcotics across the Canada-US border. 
+            </div></div>
+            <div class="box box2"><div>Jonathan Oppenheimer
+                <br>
+                The big man; he is very large. 
+            </div></div>
+            <div class="box box3"><div>Rohan Suri
+                <br>
+                The big man; he is very large. 
+            </div></div>
+            <div class="box box4"><div>Sean Young
+                <br>
+                A senior at George Mason High School, Sean is a junior coder and is interested in things that go zoom.
+            </div></div>
+          </div>
+
+       
     </div>
 
     <div class="parallax2"></div>
 
-    <div class="footer"> Copyright © 2020 freedomap, all rights reserved</div>
+    <div class="footer"> Copyright © 2020 freedomap, All Rights Reserved</div>
 </main>
 {% endblock %}

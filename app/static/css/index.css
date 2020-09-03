@@ -1,16 +1,31 @@
+:root {
+    --primary-color: #08d9d6;
+    --accent-color: #ff2e63;
+    --text-color: #252a34;
+    --bg-color: #eaeaea;
+}
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .header {
-    box-sizing: border-box;
-    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10;
     left: 0;
     opacity: 0.8;
     position: absolute;
     width: 100vw;
     height: 70px;
-    padding: 5px;
     text-align: center;
-    color: black;
+    color: var(--text-color);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
     background: white;
     font-size: 15px;
+    z-index: 5;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
@@ -18,11 +33,16 @@
 }
 
 .container .btn {
-    background-color: rgba(255, 255, 255, 0.6);
-    color:black;
     position: absolute;
     top: 50%;
     left: 50%;
+    font-family: 'Ubuntu', sans-serif;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    background: linear-gradient(to bottom, var(--accent-color) 50%, var(--primary-color) 50%);
+    background-position-y: 100%;
+    background-size: 100% 200%;
+    color: var(--text-color);
+    transition: background-position 250ms;
     transform: translate(-50%, -50%);
     font-size: 20px;
     padding: 24px 48px;
@@ -31,24 +51,18 @@
     text-align: center;
 }
 
-.container:hover ~ .parallax {
-    opacity: 0.8;
-}
-
-.container:hover .btn {
-    background-color: rgba(0, 0, 0, 0);
-    opacity: 1;
-}
-
 .container .btn:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-position-y: 0px;
+}
+
+.container:hover~.parallax {
+    opacity: 0.8;
 }
 
 .parallax {
     top: 0;
     position: sticky;
     will-change: transform;
-    z-index: -1;
     background-image: url('/static/img/background_protest.jpg');
     width: 100vw;
     height: 100vh;
@@ -64,7 +78,7 @@
     transform: translate(-50%, -50%);
     height: 75px;
     width: 75px;
-    filter: hue-rotate(75deg);
+    cursor: pointer;
 }
 
 .parallax2 {
@@ -83,17 +97,67 @@
 }
 
 .ptext {
+    position: relative;
+    font-size:25px;
+    z-index: 2;
     padding: 40px;
     background: white;
     height: inherit;
-    font-size: 36px;
     text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.headtext {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.subheadtext {
+    font-weight: bold;
+}
+
+.mission {
+    padding-bottom: 30px;
 }
 
 .footer {
+    position: relative;
+    z-index: 2;
     padding: 5px;
     text-align: center;
-    color: black;
-    background-color: red;
+    color: var(--text-color);
+    background-color:var(--accent-color);
     font-size: 15px;
+}
+
+/* the flexbox code */
+
+.grid2x2 {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.grid2x2>div {
+    display: flex;
+    flex-basis: calc(40%);
+    justify-content: center;
+    flex-direction: column;
+}
+
+.grid2x2>div>div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box {
+    margin: 20px;
+    font-size:15px;
+    background-color:#08d9d6;
+    width: 1px;
+    padding: 5px;
 }

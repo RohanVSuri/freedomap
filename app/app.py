@@ -33,8 +33,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    pass
-    # app.register_blueprint(map_blueprint.views.bp)
+    app.register_blueprint(map_blueprint.views.bp)
 
 
 def register_errorhandlers(app):

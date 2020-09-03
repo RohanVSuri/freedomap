@@ -3,11 +3,16 @@
 
 {% block head %}
 <title>Map - freedomap</title>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" defer></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/map.css') }}">
+<script src="{{ url_for('static', filename='/js/map.js') }}"></script>
 {% endblock %}
 
 
 {% block content %}
 <main>
-
+    <!-- Map element must go first -->
+    <div id="map"></div>
+    <p style="position: absolute; top: 200px; left: 0;">Hi</p>
 </main>
 {% endblock %}
