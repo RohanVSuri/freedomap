@@ -1,13 +1,11 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, DECIMAL, Integer
+from app.exts import db
 
-Model = declarative_base()
-
-class Protest(Model):
+class Protest(db.Model):
     __tablename__ = 'protest'
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    lat = Column(DECIMAL)
-    lng = Column(DECIMAL)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    lat = db.Column(db.Float(7))
+    lng = db.Column(db.Float(7))
+    submissions = db.relationship('ProtestSubmission', backref='protest', lazy='dynamic')
 
 # Option to submit either address which gets converted to lang lat for heatmap orrr....
 # Option to allow location data so we just pull their exact gps location
@@ -15,8 +13,8 @@ class Protest(Model):
 # Protest Submissions are created by users who see a protest at their current location.
 # The lat and lng attributes should be their own location, or somewhere close to them
 
-class ProtestSubmission(Model):
+class ProtestSubmission(db.Model):
     __tablename__ = 'protestsubmission'
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    lat = Column(DECIMAL)
-    lng = Column(DECIMAL)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    lat = db.Column(db.Float(7))
+    lng = db.Column(db.Float(7))

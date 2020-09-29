@@ -1,8 +1,14 @@
+from app.map.models import ProtestSubmission
 from flask import Blueprint, render_template
+from flask.json import jsonify
 
 
-bp = Blueprint('map', 'map',static_folder='/static', template_folder='/static')
+bp = Blueprint('map', 'map', url_prefix='/map', static_folder='/static', template_folder='/static')
 
-@bp.route('/map', methods=['GET'])
+@bp.route('/', methods=['GET'])
 def map():
     return render_template('map.html')
+
+@bp.route('protest-submission', methods=['GET'])
+def protest_submissions():
+    return jsonify(ProtestSubmission.query.all())
