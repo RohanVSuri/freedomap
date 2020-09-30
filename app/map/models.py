@@ -16,5 +16,12 @@ class Protest(db.Model):
 class ProtestSubmission(db.Model):
     __tablename__ = 'protestsubmission'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    address = db.Column(db.String(200))
+    # lat and lng are hidden to the user on the ui 
     lat = db.Column(db.Float(7))
     lng = db.Column(db.Float(7))
+    description = db.Column(db.String(120))
+    # type = db.Column(db.)
+
+    # local issue, national issue, racial issue, governmental overreach, custom 
+

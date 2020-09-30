@@ -1,3 +1,4 @@
+let panelElement;
 let map;
 
 function initMap() {
@@ -8,10 +9,17 @@ function initMap() {
         streetViewControl: false,
         mapTypeControl: false
     });
+
+    panelElement = document.getElementsByClassName('submission-panel')[0];
+
+    map.addListener('click', (event) => {
+        let latLng = event.latLng;
+        openSubmissionPanel(latLng);
+    });
       
     renderHeatmap(map);
 }
-  
+
 async function renderHeatmap(map) {
     // let protestSubmissions = await fetch('/map/protest-submissions', {
     //     method: 'GET',
@@ -58,6 +66,10 @@ async function renderProtestIcons(map) {
     for (let protest of protests) {
 
     }
+}
+
+function openSubmissionPanel(latLng) {
+    panelElement.classList.toggle('shown');
 }
 
 var mapStyles = [

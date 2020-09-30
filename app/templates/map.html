@@ -3,7 +3,7 @@
 
 {% block head %}
 <title>Map - freedomap</title>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZkEDtT02nOisMui_Z2KLNmavWRKcKq2I&callback=initMap&libraries=&v=weekly&libraries=visualization" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNtF_xCPiYRoy5f-qpd1RrqRjFoJe7zMw&callback=initMap&libraries=&v=weekly&libraries=visualization" defer></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/map.css') }}">
 <script src="{{ url_for('static', filename='/js/map.js') }}"></script>
 {% endblock %}
@@ -13,6 +13,7 @@
 <main>
     <!-- Map element must go first -->
     <div id="map"></div>
-    <p style="position: absolute; top: 200px; left: 0;">Hi</p>
+    <p style="position: absolute; top: 200px; left: 0;"></p>
+    <aside class="submission-panel"></aside>
 </main>
 {% endblock %}

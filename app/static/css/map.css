@@ -1,8 +1,52 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 main {
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 main > #map {
     height: 100%;
+}
+
+aside.submission-panel {
+    position: absolute;
+    z-index: 5;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    min-height: 100vh;
+    height: 100%;
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) -1px 0px 15px 5px;
+    width: 25vw;
+    max-width: 450px;
+    min-width: 300px;
+    transition-timing-function: ease-in;
+    transition: transform 200ms;
+    transform: translateX(110%);
+}
+
+aside.submission-panel.shown {
+    transition-timing-function: ease-out;
+    transform: translateX(0);
+}
+
+@media only screen and (max-width: 900px) {
+    aside.submission-panel {
+        right: 0px;
+        left: 0px;
+        width: 100vw;
+        max-width: 100vw;
+        transform: translateY(100%);
+    }
+
+    aside.submission-panel.shown {
+        transform: translateY(0);
+    }
 }

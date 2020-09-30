@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
 }
 
 .container .btn {
@@ -52,6 +53,7 @@
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
+    pointer-events: all;
 }
 
 .container .btn:hover {
@@ -119,6 +121,7 @@
 
 .subheadtext {
     font-weight: bold;
+    font-size: 20px; 
 }
 
 .mission {

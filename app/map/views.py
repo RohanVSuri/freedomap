@@ -9,6 +9,10 @@ bp = Blueprint('map', 'map', url_prefix='/map', static_folder='/static', templat
 def map():
     return render_template('map.html')
 
+@bp.route('/panel', methods=['GET'])
+def panel():
+    return render_template('panel.html')
+
 @bp.route('protest-submission', methods=['GET'])
 def protest_submissions():
     return jsonify(ProtestSubmission.query.all())
