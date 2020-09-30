@@ -1,5 +1,9 @@
 from flask import Flask, render_template, flash, jsonify
+from rq.connections import resolve_connection
 from app import map as map_blueprint
+import redis
+import rq
+import rq_scheduler
 from app.exts import db, migrate
 from config import Config
 
@@ -8,14 +12,21 @@ def create_app(config_name=Config):
     app = Flask(__name__.split('.')[0])
     app.config.from_object(config_name)
 
-
     # Register before requests mixins prior to those that are inside extensions
     register_extensions(app)
+
+    app.redis = redis.from_url(app.config['REDIS_URL'])
+
+    app.task_queue = rq.Queue('freedomap-tasks', connection=app.redis)
+    app.task_queue.empty()
+    app.scheduler = rq_scheduler.Scheduler(queue=app.task_queue, connection=app.task_queue.connection)
+    setup_tasks(app.scheduler)
+
     register_url_rules(app)
     register_blueprints(app)
     register_errorhandlers(app)
     app.shell_context_processor(lambda: {
-        'db': db, 'Protest': map_blueprint.models.Protest,
+        'db': db, 'Protest': map_blueprint.models.Protest, 'ProtestSubmission': map_blueprint.models.ProtestSubmission
     })
 
     return app
@@ -53,3 +64,13 @@ def register_url_rules(app: Flask):
     def main():
         return render_template('index.html')
 
+def setup_tasks(scheduler: rq_scheduler.Scheduler):
+    # scheduler.cron(
+    #     '0 0 * * *',
+    #     'app.tasks.drop_stale_submissions'
+    # )
+
+    scheduler.cron(
+        '* * * * *',
+        'app.tasks.create_protests'
+    )

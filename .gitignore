@@ -4,3 +4,4 @@
 .flaskenv
 .vscode
 **/__pycache__
+*.db

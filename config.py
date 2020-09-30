@@ -9,6 +9,7 @@ class Config:
                               'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECONNECT = 1000
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://localhost:6379'
     # ClearDB's idle limit is 90 seconds, so set the recycle to be under 90
     if os.environ.get('DATABASE_URL'):
         SQLALCHEMY_POOL_SIZE = 3

@@ -50,3 +50,115 @@ aside.submission-panel.shown {
         transform: translateY(0);
     }
 }
+
+.home {
+    position: absolute; 
+    top: -10px; 
+    left: 10px;
+    color:rgb(102, 102, 102);
+    font-family: 'arial';
+    background: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 8px; 
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.2);
+    
+}
+
+.tags-list > img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.tags-list > * {
+    vertical-align: middle;
+}
+
+.tags-list > img:first-of-type {
+    margin-left: 10px;
+}
+
+.tags-list > img:not(:first-of-type) {
+    transform: translateX(calc(-20px * var(--icon-index)));
+}
+
+.tags-list:hover > img {
+    transform: translateX(0px);
+}
+
+.logo{
+    vertical-align: top;
+    height:23px;
+    z-index: 6;
+    top:0px;
+    left:0px;
+}
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    /* background:rgba(0,0,0,.4); */
+    cursor:pointer;
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 8px;
+    min-width: 250px;
+    padding-left:10px;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    z-index:99999;
+    font-size: 20px;
+    left:100px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+.text{
+    text-align:left;
+    font-size: 20px;
+}
+.descrip1{ 
+    font-size:18px;
+}
+/* Popup box BEGIN */
