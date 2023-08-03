@@ -1,5 +1,5 @@
 # congressional-app
-freedomap was developed by Andrew Lester, Jonathan Oppenheimer, Sean Young and Rohan Suri for the 2020 Congressional App Challenge, largely in a vscode live share session during the months of July and October. Not the months in between. This app is pretty much finished - we were going to work on it more if we actually won. We did not win. 
+freedomap was developed by Andrew Lester, Jonathan Oppenheimer, Sean Young and Rohan Suri for the 2020 Congressional App Challenge, largely in a vscode live share session during the months of July and October.
 
 The video we submitted for the competition is viewable here: https://www.youtube.com/watch?v=98RK6MXY-W8
 
